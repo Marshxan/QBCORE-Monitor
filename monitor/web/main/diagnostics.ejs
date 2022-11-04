@@ -1,0 +1,122 @@
+<%- await include('parts/header.ejs', locals) %>
+
+
+<div class="row justify-content-md-center">
+    <div class="col-lg-8 col-xl-5 mw-col6">
+
+        <!-- txAdmin Config Card -->
+        <div class="card card-accent-danger" style="min-height: 160px;">
+            <div class="card-header font-weight-bold">txAdmin Info:</div>
+            <div class="card-body">
+                <h5>Stats:</h5>
+                <strong>Versions:</strong> 
+                    <code>v<%= txAdminVersion %></code> / <code><%= fxServerVersion %></code> <br>
+                <strong>Uptime:</strong> <code><%= txadmin.uptime %></code> <br>
+                <strong>Cfx.re URL:</strong> 
+                    <a href="<%= txadmin.cfxUrl %>" target="_blank" rel="noopener noreferrer"><%= txadmin.cfxUrl %></a> <br>
+                <strong>Ban/Whitelist Checking:</strong> 
+                    <code><%= txadmin.banlistEnabled %></code>, 
+                    <code><%= txadmin.whitelistEnabled %></code> <br>
+                <strong>HTTP Counter:</strong> 
+                    <code><%= txadmin.httpCounterLog %></code> &lt; <code><%= txadmin.httpCounterMax %></code> <br>
+                <strong>Monitor Restarts:</strong> 
+                    <code>CL <%= txadmin.monitorRestarts.close %></code> /
+                    <code>HB <%= txadmin.monitorRestarts.heartBeat %></code> / 
+                    <code>HC <%= txadmin.monitorRestarts.healthCheck %></code> <br>
+                <strong>HB Fails:</strong>
+                    <code>HTTP <%= txadmin.hbHTTPFails %></code> / <code>FD3 <%= txadmin.hbFD3Fails %></code> <br>
+                <strong>Boot Seconds:</strong> <code><%= txadmin.hbBootSeconds %></code> <br>
+                <strong>Freeze Seconds:</strong> <code><%= txadmin.freezeSeconds %></code> <br>
+                <strong>Koa Sessions:</strong> <code><%= txadmin.koaSessions %></code> <br>
+                <strong>Logs Storage Size:</strong> <code><%= txadmin.logStorageSize %></code> <br>
+                <strong>Logger Status:</strong> <br>
+                ├─ Admin: <code><%= txadmin.loggerStatusAdmin %></code> <br>
+                ├─ FXServer: <code><%= txadmin.loggerStatusFXServer %></code> <br>
+                └─ Server: <code><%= txadmin.loggerStatusServer %></code> <br>
+                <hr>
+                <h5>Settings:</h5>
+                <strong>Schedule:</strong> <code><%= txadmin.schedule %></code> <br>
+                <strong>Cooldown:</strong> <code><%= txadmin.cooldown %></code> <br>
+                <strong>FXServer Path:</strong> <code><%= txadmin.fxServerPath %></code> <br>
+                <strong>Server Data Path:</strong> <code><%= txadmin.serverDataPath %></code> <br>
+                <strong>CFG Path:</strong> <code><%= txadmin.cfgPath %></code> <br>
+                <strong>Connect Endpoint:</strong> <code><%= txadmin.fxServerHost %></code> <br>
+                <strong>Additional Arguments:</strong> <code><%= txadmin.commandLine %></code>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.col-->
+
+
+    <div class="col-lg-8 col-xl-5 mw-col6">
+
+        <!-- Environment Card -->
+        <div class="card card-accent-danger" style="min-height: 160px;">
+            <div class="card-header font-weight-bold">Environment:</div>
+            <div class="card-body">
+                <% if (host.error !== false) { %>
+                    <%- host.error %>
+                <% } else { %>
+                    <strong>Node:</strong> <%= host.nodeVersion %> <br>
+                    <strong>OS:</strong> <%= host.osDistro %> <br>
+                    <strong>Username:</strong> <%= host.username %> <br>
+                    <strong>Host CPUs:</strong> <%= host.cpus %> <%- host.clockWarning %><br>
+                    <strong>Host Memory:</strong> <%= host.memory %>
+                <% } %>
+            </div>
+        </div>
+
+        <!-- FXServer Info Card -->
+        <div class="card card-accent-info" style="min-height: 160px;">
+            <div class="card-header font-weight-bold">FXServer /info.json:</div>
+            <div class="card-body">
+                <% if (fxserver.versionMismatch) { %>
+                    <div class="alert alert-danger text-center" role="alert">
+                        <strong>This version doesn't match txAdmin's version!</strong><br>
+                        If you just updated FXServer, restart txAdmin. <br>
+                        Otherwise, it means FXServer was already running before txAdmin started, and nothing is going to work properly.
+                    </div>
+                <% } %>
+                <% if (fxserver.error !== false) { %>
+                    <%- fxserver.error %>
+                <% } else { %>
+                    <strong>Status: <span class="badge badge-<%= fxserver.statusColor %>"><%= fxserver.status %></span></strong> <br>
+                    <strong>Version:</strong> <%= fxserver.version %> <br>
+                    <strong>Resources:</strong> <%= fxserver.resources %> <br>
+                    <strong>OneSync:</strong> <%= fxserver.onesync %> <br>
+                    <strong>Max Clients:</strong> <%= fxserver.maxClients %> <br>
+                    <strong>txAdmin Version:</strong> <%= fxserver.txAdminVersion %> <br>
+                <% } %>
+            </div>
+        </div>
+
+        <!-- Proccesses Card -->
+        <div class="card card-accent-info">
+            <div class="card-header font-weight-bold">Processes:</div>
+            <div class="card-body">
+                <% if (!proccesses.length) { %>
+                    Failed to retrieve processed data. <br>
+                    Check the terminal for more information (if verbosity is enabled)
+                <% } else { %>
+                    <% for (const process of proccesses) { %>
+                        <strong>Process:</strong> (<%= process.pid %>) <%= process.name %> <br>
+                        <strong>Parent:</strong> <%= process.ppid %> <br>
+                        <strong>Memory:</strong> <%= process.memory %> <br>
+                        <strong>CPU:</strong> <%= process.cpu %> <br>
+                        <br>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+
+        <!-- Execution time -->
+        <div class="text-center mb-4">
+            <small class="text-muted"><%- message %></small>
+        </div>
+
+    </div>
+    <!-- /.col-->
+</div>
+
+<%- await include('parts/footer.ejs', locals) %>

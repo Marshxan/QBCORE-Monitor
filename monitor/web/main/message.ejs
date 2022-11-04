@@ -1,0 +1,20 @@
+<%- await include('parts/header.ejs', locals) %>
+
+<div class="text-center mb-4">
+    <h2>Message</h2>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-6">
+        <div class="alert alert-warning text-center" role="alert">
+            <%- message %>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.history.pushState(null, 'txAdmin', '/');
+</script>
+
+
+<%- await include('parts/footer.ejs', locals) %>
