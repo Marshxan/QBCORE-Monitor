@@ -110,7 +110,7 @@
 <!-- Title & outdated message: -->
 <% if (isWebInterface) { %>
     <div class="text-center mb-4">
-        <h2><%= serverName %> Dashboard</h2>
+        <h2>Dashboard</h2>
     </div>
 <% } %>
 <% if (txaOutdated) { %>
@@ -168,7 +168,7 @@
 <% } %>
 
 <!-- Chart stuff -->
-<div class="row justify-content-center">
+<!-- <div class="row justify-content-center">
     <div class="dashboard-chart">
         <div class="card card-accent-info">
             <div class="card-body p-1">
@@ -197,7 +197,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
@@ -212,12 +212,13 @@
                 <button onclick="txApiFxserverControl('start')"
                     class="btn btn-outline-<%= perms.controlsClass %> btn-lg mx-auto m-2" type="button" id="ctrl-start"
                     <%= perms.controls %>>START</button> &nbsp;
-                <button onclick="txApiFxserverControl('restart')"
-                    class="btn btn-outline-<%= perms.controlsClass %> btn-lg mx-auto m-2" type="button"
-                    id="ctrl-restart" <%= perms.controls %>>RESTART</button> &nbsp;
-                <button onclick="txApiFxserverControl('stop')"
+                                    <button onclick="txApiFxserverControl('stop')"
                     class="btn btn-outline-<%= perms.controlsClass %> btn-lg mx-auto m-2" type="button" id="ctrl-stop"
                     <%= perms.controls %>>STOP</button>
+                <br />
+                <button onclick="txApiFxserverControl('restart')"
+                class="btn btn-outline-<%= perms.controlsClass %> btn-lg mx-auto m-2" type="button"
+                id="ctrl-restart" <%= perms.controls %>>RESTART</button> &nbsp;
                 <br />
 
                 <button onclick="controlCommand('admin_broadcast')" class="btn btn-outline-dark btn-md mx-auto m-2"
@@ -254,6 +255,38 @@
         </div>
     </div>
 
+</div>
+
+
+<div class="row justify-content-center">
+    <div class="dashboard-chart">
+        <div class="card card-accent-info">
+            <div class="card-body p-1">
+                <div class="text-center axisTitle d-flex">
+                    <div class="mt-1x">
+                        <span class="badge clientsLabel">&nbsp;</span>
+                        <span class="labelText">Players</span>
+                        <span class="badge tickTimeLabel">&nbsp;</span>
+                        <span class="labelText">Tick Time (at bottom is better)</span>
+                    </div>
+
+                    <div class="btn-group ml-auto">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" 
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="chartThreadSelectBtn">svMain</button>
+                        <div class="dropdown-menu threadSelectDropdown bg-secondary" data-popper-placement="bottom-start">
+                            <a class="dropdown-item bg-secondary text-dark" href="#" id="chartThreadSelectBtn-svMain">svMain</a>
+                            <a class="dropdown-item bg-secondary text-dark" href="#" id="chartThreadSelectBtn-svSync">svSync</a>
+                            <a class="dropdown-item bg-secondary text-dark" href="#" id="chartThreadSelectBtn-svNetwork">svNetwork</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="d3-container">
+                    <div class="text-center text-muted p-4" id="d3-container-message">loading chart...</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
