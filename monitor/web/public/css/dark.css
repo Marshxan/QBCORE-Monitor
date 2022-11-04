@@ -4,34 +4,13 @@
   --danger: #ff148f !important;
 }
 
-/**
- *  A dark theme for all, by GoatGeek#0001
- *
- *       _))
- *      > *\     _~
- *      `;'\\__-' \_
- *         | )  _ \ \
- *        / / ``   w w
- *       w w
- */
 #darkToggleDark, #darkToggleLight {
   max-width: 22px !important;
   cursor: pointer;
 }
 
 body.theme--dark {
-  /*************************
-   * CORE UI MODIFICATIONS
-   *************************/
-  /***********************
-   * TXADMIN ELEMENTS
-   ***********************/
-  /**
-   * Deployment things
-   */
-  /**
-   * txAdmin player list
-   */
+
 }
 
 body.theme--dark, body.theme--dark .c-app, body.theme--dark .c-main, body.theme--dark .c-footer, body.theme--dark .c-header {
@@ -48,11 +27,11 @@ body.theme--dark .list-group-accent .list-group-item-accent-secondary {
 }
 
 body.theme--dark .progress {
-  background-color: #3d3d3f;
+ background-color: #141414;  /* buttoms color*/
 }
 
 body.theme--dark .c-switch-slider, body.theme--dark .c-switch-slider::before {
-  background-color: #3d3d3f;
+  background-color: #141414;
   border-color: #515153;
   -webkit-transition: .15s ease-out;
   transition: .15s ease-out;
@@ -154,11 +133,11 @@ body.theme--dark .border-right {
 }
 
 body.theme--dark .c-sidebar, body.theme--dark .c-callout, body.theme--dark .modal-content, body.theme--dark .modal-body {
-  background: #29292A;
+  background: #141414;
 }
 
 body.theme--dark .alert.alert-secondary {
-  background: #3d3d3f;
+  background: #141414;
   color: #FFFFFF;
   border-color: #515153;
 }
@@ -196,7 +175,7 @@ body.theme--dark .nav-tabs .nav-link {
 }
 
 body.theme--dark .nav-tabs .nav-link.active {
-  color: #29292A !important;
+  color: #141414 !important;
   font-weight: 600;
   border: 1px solid #00bf8f !important;
   border-bottom-width: 0 !important;
@@ -211,7 +190,7 @@ body.theme--dark .nav-link.nav-link-disabled {
 }
 
 body.theme--dark .nav-link.active {
-  color: #29292A !important;
+  color: #141414 !important;
   font-weight: 600;
 }
 
@@ -235,15 +214,15 @@ body.theme--dark .dropdown-menu {
 }
 
 body.theme--dark .dropdown-menu .dropdown-item, body.theme--dark .dropdown-menu {
-  background-color: #3d3d3f;
+  background-color: #141414;
 }
 
 body.theme--dark .dropdown-menu .dropdown-item:hover {
-  background-color: #29292A;
+  background-color: #141414;
 }
 
 body.theme--dark .dropdown-header {
-  background-color: #3d3d3f;
+  background-color: #141414;
 }
 
 body.theme--dark .c-header .c-header-toggler {
@@ -255,11 +234,11 @@ body.theme--dark pre, body.theme--dark .close {
 }
 
 body.theme--dark [data-notify="message"] > pre {
-  color: #29292A;
+  color: #141414;
 }
 
 body.theme--dark button[data-notify="dismiss"] {
-  color: #29292A;
+  color: #141414;
 }
 
 body.theme--dark .form-control, body.theme--dark .btn, body.theme--dark .nav-pills .nav-link.active,
@@ -269,13 +248,13 @@ body.theme--dark .nav-pills .show > .nav-link, body.theme--dark .c-callout {
 }
 
 body.theme--dark .form-control, body.theme--dark .input-group-text {
-  background: #3d3d3f;
+  background: #141414;
   border-color: #515153;
   color: #FFFFFF;
 }
 
 body.theme--dark .form-control[disabled], body.theme--dark .form-control[readonly] {
-  background: #29292A;
+  background: #141414;
   border-color: #515153;
   color: #FFFFFF;
   cursor: not-allowed;
@@ -311,7 +290,7 @@ body.theme--dark .table strong, body.theme--dark .table .table-hover tbody tr:ho
 }
 
 body.theme--dark .table .thead-light th {
-  background-color: #3d3d3f !important;
+  background-color: #141414 !important;
   color: #FFFFFF;
   font-size: 1.175em;
   font-family: Consolas, Courier, Droid Sans Mono, monospace;
@@ -323,7 +302,7 @@ body.theme--dark .card {
 }
 
 body.theme--dark .card, body.theme--dark .card .card-header, body.theme--dark .card .card-body, body.theme--dark .card .card-footer {
-  background-color: #29292A;
+  background-color: #141414;
 }
 
 body.theme--dark .card .card-header, body.theme--dark .card .card-header p, body.theme--dark .card .card-body, body.theme--dark .card .card-body p {
@@ -337,7 +316,7 @@ body.theme--dark .card .card-header > h5, body.theme--dark .card .card-header .c
 }
 
 body.theme--dark #modPlayerMain-notes {
-  background-color: #29292A;
+  background-color: #141414;
 }
 
 body.theme--dark .attentionText {
@@ -349,11 +328,11 @@ body.theme--dark .logEntry {
 }
 
 body.theme--dark .logEntry:hover {
-  background-color: #3d3d3f !important;
+  background-color: #141414 !important;
 }
 
 body.theme--dark .bigbutton {
-  background: #3d3d3f;
+  background: #141414;
 }
 
 body.theme--dark .bigbutton:hover {
@@ -366,7 +345,7 @@ body.theme--dark .blur-input:not(:focus):not(:placeholder-shown) {
 }
 
 body.theme--dark .playerlist .player:hover {
-  background-color: #3d3d3f;
+  background-color: #141414;
 }
 
 body.theme--dark .playerlist .player .pname {
@@ -374,6 +353,6 @@ body.theme--dark .playerlist .player .pname {
 }
 
 body.theme--dark .plheader {
-  background-color: #3d3d3f !important;
+  background-color: #141414 !important;
 }
 /*# sourceMappingURL=dark.css.map */
