@@ -43,10 +43,8 @@
             font-size: 0.7rem !important;
         }
     </style>
-    <!-- injected consts -->
    <script><%- jsInjection %></script>
 </head>
-
 <body class="c-app <%= uiTheme %>">
     <!-- Menu -->
     <div id="sidebar" class="c-sidebar c-sidebar-dark c-sidebar-fixed 
@@ -61,26 +59,8 @@
         <% } %>
         <ul class="c-sidebar-nav">
             <li class="c-sidebar-nav-title font-size-larger">
-                QB-Admin Panel
+                QBCore Admin Panel
             </li>
-
-            <!-- <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
-                <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
-                    <svg class="c-sidebar-nav-icon">
-                        <use href="img/coreui_icons-full.svg#cil-layers"></use>
-                    </svg> Dropdown example
-                </a>
-                <ul class="c-sidebar-nav-dropdown-items">
-                    <li class="c-sidebar-nav-item">
-                        <a class="c-sidebar-nav-link" href="console">
-                            <svg class="c-sidebar-nav-icon">
-                                <use href="img/coreui_icons.svg#cil-terminal"></use>
-                            </svg> option 1
-                        </a>
-                    </li>
-                </ul>
-            </li> -->
-
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link" href="<%= basePath %>">
                     <svg class="c-sidebar-nav-icon">

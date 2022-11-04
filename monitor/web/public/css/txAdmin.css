@@ -234,11 +234,11 @@ mark {background-color: #ffeaa7;}
     color: #cfcfcf;
 }
 .nav-pills .nav-link.nav-link-red{
-    color: #e55353;
+    color: #dc143c;
 }
 .nav-pills .nav-link.nav-link-red.active{
     color: #fff;
-    background-color: #e55353;
+    background-color: #dc143c;
 }
 #modPlayerMain-notes{
     background-color: #fcf8e3;
