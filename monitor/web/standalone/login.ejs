@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>txAdmin Login</title>
+    <title>QB-Admin Login</title>
     <meta name="description" content="Remotely Manage & Monitor your GTA5 FiveM Server with txAdmin v<%= txAdminVersion %> atop FXServer <%= fxServerVersion %>">
     <meta name="author" content="André Tabarra">
     <meta name="robots" content="noindex">
     <!-- Open Graph Meta Tags -->
     <meta property="og:url" content="https://github.com/tabarra/txAdmin">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="txAdmin - <%= serverName %>">
+    <meta property="og:title" content="QBCore - Admin">
     <meta property="og:description" content="Remotely Manage & Monitor your GTA5 FiveM Server with txAdmin v<%= txAdminVersion %> atop FXServer <%= fxServerVersion %>">
     <meta property="og:image" content="https://i.imgur.com/Z3S9q6J.png">
     <!--style-->
@@ -164,15 +164,15 @@
     <div class="container">
 
         <!-- Logo Row -->
-        <% if (isWebInterface) { %>
+        <!-- <% if (isWebInterface) { %>
             <% if (isMatrix) { %>
-                <div class="row justify-content-center mb-4"><pre><b><%= ascii %></b></pre></div>
+                <div class="row justify-content-left mb-4"><pre><b><%= ascii %></b></pre></div>
             <% } else { %>
-                <div class="row justify-content-center mb-4">
-                    <img src="<%= logoURL %>" alt="txAdmin Logo">
+                <div class="row justify-content-left mb-4">
+                    <img src="https://cdn.discordapp.com/attachments/1003769018378895380/1038126299304185926/image_4_1.png" alt="qb-Admin Logo">
                 </div>
             <% } %>
-        <% } %>
+        <% } %> -->
 
         <!-- Card Row -->
         <div class="row justify-content-center">
@@ -279,7 +279,7 @@
                             </script>
                         <% } %>
                         <% if (template === 'normal') { %>
-                            <h1 class="mb-3">Login</h1>
+                            <h1 class="mb-3"></h1>
                             <% if (isWebInterface) { %>
                                 <a class="btn cfxrebtn<%= citizenfxDisabled ? ' disabled' : '' %>"
                                    role="button" href="auth/citizenfx/redirect">
@@ -291,7 +291,7 @@
                                 </h5>
                             <% } %>
                         
-                            <div class="hrsep">OR</div>
+                            <div class="hrsep"></div>
 
                             <form action="auth/password" method="post">
                                 <div class="input-group mb-2 mx-auto" style="max-width: 280px;">
@@ -300,7 +300,7 @@
                                             <i class="icon-user"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control" type="text" name="username" placeholder="Username" required>
+                                    <input class="form-control" type="text" name="username" placeholder="Name" required>
                                 </div>
                                 <div class="input-group mb-4 mx-auto" style="max-width: 280px;">
                                     <div class="input-group-prepend">
@@ -311,8 +311,9 @@
                                     <input class="form-control" type="password" name="password" placeholder="Password" required>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <button class="btn btn-primary px-4" type="submit">Login</button>
+                                    <button class="btn btn-primary px-4" type="submit">🗝️</button>
                                 </div>
+                                <!-- <div class="hrsep"></div> -->
                             </form>
                         <% } %>
                     </div>
@@ -326,13 +327,13 @@
         </div>
 
         <!-- Info Row -->
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center">
             <div class="col-md-4 ">
                 <div class="alert alert-secondary text-center small" style="min-width: 280px;" role="alert">
                     <h5 class="text-muted">
-                        <strong>txAdmin</strong> Official Discord: <br>
-                        <a href="https://discord.gg/uAmsGa2" target="_blank">
-                            <img src="https://discordapp.com/api/guilds/577993482761928734/widget.png?style=shield"></img>
+                        <strong>QB-TxAdmin</strong> Official Github: <br>
+                        <a href="https://github.com/Marshxan/qb-txadmin" target="_blank">
+                            <img src="https://cdn.discordapp.com/attachments/1003769018378895380/1038125207627509800/githubbanner_2.png"></img>
                         </a>
                     </h5>
                     
@@ -350,15 +351,15 @@
                         </a>
                     <% } %>
 
-                    <div class="hrsep hrsep-small">Info</div>
+                    <div class="hrsep hrsep-small">- Server Info -</div>
                     <div class="text-muted">
                         <strong>Server profile:</strong> <%= serverProfile %> <br>
-                        <strong>txAdmin version:</strong> <%= txAdminVersion %> <br>
+                        <strong>QB-txAdmin version:</strong> <%= txAdminVersion %> <br>
                         <strong>FXServer build:</strong> <%= fxServerVersion %> 
                     </div>
                 </div>
 
-                <!-- Dark/Light mode toggle -->
+
                 <% if (isWebInterface) { %>
                     <div style="text-align: center">
                         <svg class="c-sidebar-nav-icon d-none" id="darkToggleLight">
@@ -378,7 +379,7 @@
                 </div>
             </div>
         <% } %>
-    </div>
+    </div> -->
     
     <!-- CoreUI and necessary plugins-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
