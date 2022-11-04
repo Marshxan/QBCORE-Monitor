@@ -1,2 +1,1 @@
-# qb-txadmin
-this is a TXAdmin theme replacement..... who wants the old grey TX admin theme when you can have the qbcore theme!!!
+<h1 align="center"> 🎉 Big Thanks To These People! 🎉 </h1>
